@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AliFarees's Site</title>
+  <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap" rel="stylesheet">
+  <style>
+    /* Apply font to your headings and paragraphs */
+    h1, h2, h3, p {
+      font-family: 'Inknut Antiqua', serif;
+    }
+  </style>
+  
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+  <img src="https://i.imgur.com/U6WD6tU.png" alt="AF Logo" width="60">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About me</a></li>
+ <li><a href="https://www.behance.net/alialfarees" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+
+
+      <li><a href="#contact">Contact me</a></li>
+    </ul>
+    
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="left">
+      <h1>Designing</h1>
+      <p>Clean and user friendly UI designs<br>Made using: Figma</p>
+    </div>
+    <div class="avatar">
+      <img src="https://i.imgur.com/XjQujob.png" alt="Avatar" />
+    </div>
+    <div class="right">
+      <h1>3D Modeling</h1>
+      <p>Low poly 3D models specially Minecraft<br>Made using: Blockbench</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <h2>A few of my works</h2>
+    <div class="project-grid">
+      <a class="project-card" href="youtube-redesign.html" target="_blank">
+        <img src="https://i.imgur.com/TZw4bI6.png" alt="Youtube Redesign">
+        <h3>Youtube Redesign</h3>
+        <p>Made with Figma</p>
+      </a>
+      <a class="project-card" href="pc-case-model.html" target="_blank">
+        <img src="https://i.imgur.com/wlCw1f0.png" alt="PC Case 3D Model">
+        <h3>Pc Case 3D Model</h3>
+        <p>Made with Blockbench</p>
+      </a>
+      <a class="project-card" href="instagram-redesign.html" target="_blank">
+        <img src="https://i.imgur.com/y6BrhLV.png" alt="Instagram Redesign">
+        <h3>Instagram Redesign</h3>
+        <p>Made with Figma</p>
+      </a>
+      
+    </div>
+    
+  </section>
+  <script>
+  const btn = document.getElementById('backToTop');
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  btn.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+</script>
+<section id="about">
+  <h2></h2>
+  <p></p>
+</section>
+<script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100; // adjust if nav height is different
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+<script src="script.js"></script>
+<section id="about" class="about-section">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <h3>I’m a UI designer and 3D modeler</h3>
+      <p>
+        I began my journey at 13 by creating Minecraft texture packs and freelancing on Fiverr. Since then, I've expanded my skills in 3D modeling, primarily for Minecraft, and continue to offer freelance services in this area. Over the past year, I’ve also developed expertise in UI design and recently started freelancing in this field as well.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="https://i.imgur.com/M6LyaUg.png" alt="3D Avatar" />
+    </div>
+  </div>
+<link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Playfair+Display&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bottom Bar Test</title>
+  <style>
+    /* Reset margin and padding */
+    html, body {
+      margin: 100;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Your About Me content */
+    .about-section {
+      flex: 1 0 auto; /* Take all available space */
+      margin-bottom: 30px; /* Space above bar */
+      padding: 20px;
+      background: #eee;
+    }
+    
+    
+    
+    /* Bottom bar sticks at the bottom of page content */
+    .bottom-bar {
+      flex-shrink: 0; /* Prevent shrinking */
+      height: 40px;
+      background-color: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    #backToTop {
+      position: relative;
+      top: -20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      background-color: #ff914d;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    #backToTop:hover {
+      background-color: #e57c2f;
+    }
+  </style>
+</head>
+<body>
+  <section class="about-section">
+    <h2></h2>
+    <p>
+      
+    </p>
+  </section>
+  
+</body>
+</html>
+<section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <div class="contact-links">
+    <a href="https://www.instagram.com/mintydesings/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+    </a>
+    <a href="https://www.fiverr.com/s/389D29x" target="_blank" rel="noopener noreferrer" aria-label="Fiverr">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmjr3gUo_fOnUCoL66qUbNKZ8WQ_W7IWKVUw&s" alt="Fiverr" />
+    </a>
+    <a href="mailto:your.ali_farees@outlook.com" aria-label="Email">
+      <img src="https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Mail-512.png" alt="Email" />
+    </a>
+  </div>
+</section>
+
+ 
+</script>
+</section>
+<div class="static-bottom-bar">
+  <p>© 2025 Ali Farees</p>
+</div>
+
+</body>
+<!DOCTYPE html>
+<html>
+</html>
+
+
+
+
